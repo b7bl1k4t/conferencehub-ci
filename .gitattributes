@@ -1,0 +1,5 @@
+* text=auto
+Jenkinsfile text eol=lf
+*.sh text eol=lf
+deploy text eol=lf
+smoke-tests text eol=lf

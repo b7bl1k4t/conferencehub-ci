@@ -1,0 +1,12 @@
+#!/bin/sh
+set -eu
+: "${DEPLOY_ROOT:?Set DEPLOY_ROOT}"
+target=${1:-}
+case "$target" in
+    staging|prod) ;;
+    *) printf 'Usage: sh deploy staging|prod\n' >&2; exit 2 ;;
+esac
+sh test.sh
+mkdir -p "$DEPLOY_ROOT/$target"
+cp dist/conferencehub-release.txt "$DEPLOY_ROOT/$target/release.txt"
+printf 'DEPLOY OK: %s (simulation)\n' "$target"
