@@ -1,5 +1,6 @@
 #!/bin/sh
 set -eu
+exit 1
 : "${BUILD_NUMBER:?Set BUILD_NUMBER}"
 : "${GIT_COMMIT:?Set GIT_COMMIT}"
 artifact=dist/conferencehub-release.txt
