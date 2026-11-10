@@ -53,5 +53,6 @@ sh smoke-tests prod
 ```
 
 `local-unversioned` — отметка локальной проверки, а не хеш Git.
-В Jenkins переменные `BUILD_NUMBER` и `GIT_COMMIT` задаются сборкой и Git checkout.
+В Jenkins `BUILD_NUMBER` задаётся сборкой, а Jenkinsfile явно переносит
+`GIT_COMMIT` из результата `checkout scm` в окружение последующих стадий.
 Ручной барьер, архивирование, очистку и обработчики post проверять в самом Jenkins.
